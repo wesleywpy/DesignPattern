@@ -24,6 +24,7 @@
     <modules>
         <module>proxy</module>
         <module>chain</module>
+        <module>decorator</module>
     </modules>
 
     <dependencyManagement>
