@@ -5,9 +5,9 @@ package com.wesley.pattern.proxy;
  */
 public interface TestInterface {
 
-    void method1();
+    void method1(String arg);
 
     void method2();
 
-    void method3();
+    void method3(String arg1, Integer arg2);
 }

@@ -1,6 +1,5 @@
 package com.wesley.pattern.proxy;
 
-import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**
@@ -12,7 +11,7 @@ public class ProxyBuilderTest {
     public void createJDKProxyObject() throws Exception {
         TestInterface proxy = (TestInterface)ProxyBuilder.createJDKProxyObject(new TestClass());
         System.out.println(proxy.getClass().getName());
-        proxy.method1();
+        proxy.method1("abc");
         proxy.method2();
     }
 
@@ -20,8 +19,7 @@ public class ProxyBuilderTest {
     public void createCglibProxyObject() throws Throwable{
         TestClass proxy = (TestClass)ProxyBuilder.createCglibProxyObject(new TestClass());
         System.out.println(proxy.getClass().getName());
-        proxy.method1();
-        proxy.method3();
+        proxy.method1("qwe");
     }
 
 }

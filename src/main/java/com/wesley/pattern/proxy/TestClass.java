@@ -5,7 +5,8 @@ package com.wesley.pattern.proxy;
  */
 public class TestClass implements TestInterface{
 
-    public void method1(){
+    @Override
+    public void method1(String arg){
         System.out.println(" 接口方法实现: Test Class method1");
     }
 
@@ -13,7 +14,7 @@ public class TestClass implements TestInterface{
         System.out.println(" 接口方法实现: Test Class method2");
     }
 
-    public void method3(){
+    public void method3(String arg1, Integer arg2){
         System.out.println(" 接口方法实现: Test Class method3");
     }
 }

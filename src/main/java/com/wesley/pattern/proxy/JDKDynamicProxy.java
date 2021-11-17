@@ -29,6 +29,12 @@ public class JDKDynamicProxy implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("proxy: "+ proxy.getClass().getName());
         System.out.println("method: "+ method);
+        Class<?>[] parameterTypes = method.getParameterTypes();
+        for (Class<?> parameterType : parameterTypes) {
+            System.out.println(" parameterType : " + parameterType.getName());
+        }
+        System.out.println(" =========分割==========");
+
 
 //        return null;
         //这里如果source是TestClass，但是我们不能使用反射,来调用它的方法，因为代理的是TestInterface接口，像下面这样，放开这一行会抛异常
@@ -47,8 +53,8 @@ public class JDKDynamicProxy implements InvocationHandler {
                 ClassLoader.getSystemClassLoader(),
                 new Class[]{TestInterface.class},
                 new JDKDynamicProxy(new TestClass()));
-        testInterface.method1();
+        testInterface.method1("argument");
         testInterface.method2();
-        testInterface.method3();
+        testInterface.method3("a1", 2);
     }
 }
