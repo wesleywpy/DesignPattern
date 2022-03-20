@@ -25,6 +25,7 @@
         <module>proxy</module>
         <module>chain</module>
         <module>decorator</module>
+        <module>factory</module>
     </modules>
 
     <dependencyManagement>
